@@ -1,0 +1,13 @@
+# 先建立一個 GCE PD 作為 NFS 的掛載 volume
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-pvc
+spec:
+  storageClassName: ""  
+  volumeName: nfs-pv
+  resources:
+    requests:
+      storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
